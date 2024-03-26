@@ -2,21 +2,19 @@ class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
         string result = "";
+        
         for(int i=0;i<strs.size();i++){
-            //cout<<strs[i]<<endl;
-            for(int j=i+1;j<strs.size();j++){
-                for(int k=0;k<strs.size();k++){
-                    if((strs[i][k]==strs[j][k])&&(strs[i][k]==strs[j+1][k])){
-                        result.push_back(strs[i][k]);
-                    }
-                    return result;
+            char first_str_ch = strs[0][i];
 
-
-                }
+            int pos = strs[i].find(first_str_ch);
+            cout<<pos<<endl;
+            if(pos!=-1){
+                result.push_back(first_str_ch);
             }
             
+        
         }
-        return "";
+        return result;
     }
 };
 
