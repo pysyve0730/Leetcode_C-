@@ -6,14 +6,19 @@ public:
             //cout<<strs[i]<<endl;
             for(int j=i+1;j<strs.size();j++){
                 for(int k=0;k<strs.size();k++){
-                    if(strs[i][k]==strs[j][k]){
+                    if((strs[i][k]==strs[j][k])&&(strs[i][k]==strs[j+1][k])){
                         result.push_back(strs[i][k]);
                     }
+                    return result;
+
 
                 }
             }
-            return result;
+            
         }
         return "";
     }
 };
+
+//strs[0][0]==strs[1][0]==strs[2][0]
+//strs[0][1]==strs[1][1]==strs[2][1]
